@@ -1,3 +1,5 @@
+//regex expression
+
 const number = '99876543210';
 
 function validateMobile(number) {
