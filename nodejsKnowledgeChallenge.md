@@ -66,6 +66,34 @@ Fork starts a new process which is a copy of the one that calls it, while exec r
 
 
 __How does the cluster module work? How is it different than using a load balancer?__
+
 Load balancing distributes the workload amongst multiple servers to improve the performances meanwhile clustering, provides a way of creating child processes that runs simultaneously and share the same server port.
 
+__What are the --harmony-* flags?__
+
+allows you to use ECMAScript 6 (ES6) features that are marked as staged. A staged feature is a completed feature that's not yet considered stable and may have breaking changes when it reaches the shipping status.
+
+__How can you read and inspect the memory usage of a Node.js process?__
+
+We can use process.memoryUsage(), or go into chrome devtools->memory tab and heap snapshot option.
+
+__What will Node do when both the call stack and the event loop queue are empty?__
+
+It indicates there is no code (function) currently executing so Node will check the queue and will keep waiting for a process to execute some code for example if Node is being used as a http server it might be waiting for an API
+
+__What are V8 object and function templates?__
+
+A string template can be best used to suffice this: V8 Templates in Node.js are a feature that allows developers to embed expressions within a string using the ${expression} syntax. The expressions are evaluated at runtime and the resulting values are inserted into the string.
+
+__What is libuv and how does Node.js use it?__
+
+Libuv is a library written in the programming language C that helps nodejs to improve efficiency while running tasks parallelly. However, nodejs already have async API's. It uses Libuvs's thread pools if async API is not available in nodejs and processes are blocking the operations. 
+
+__How can you make Node’s REPL always use JavaScript strict mode?__
+
+USe the command line option --use-strict
+
+__What is process.argv? What type of data does it hold?__
+
+process.argv is a property that holds an array of command-line values provided when the current process was initiated. The first element in the array is the absolute path to the Node, followed by the path to the file that’s running and finally any command-line arguments provided when the process was initiated.
 
